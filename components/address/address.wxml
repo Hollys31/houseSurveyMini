@@ -1,0 +1,49 @@
+<!--components/address/address.wxml-->
+<view class="modal-wrap" wx:if="{{isShow}}" catchtouchmove="catchModal">
+  <view class="modal-inner">
+    <view class="tit">房屋地址</view>
+    <view class="address">
+      <text data-level="1" data-name="province" class="{{currLevel==1?'active':''}}" bindtap="updateAddress">{{province}}</text>
+      <text data-level="2" data-name="city" class="{{currLevel==2?'active':''}}" bindtap="updateAddress">{{city}}</text>
+      <text data-level="3" data-name="distrinct" class="{{currLevel==3?'active':''}}" bindtap="updateAddress">{{distrinct}}</text>
+      <text data-level="4" data-name="town" class="{{currLevel==4?'active':''}}" bindtap="updateAddress">{{town}}</text>
+      <text data-level="5" data-name="village" class="{{currLevel==5?'active':''}}" bindtap="updateAddress">{{village}}</text>
+      <text data-level="6" wx:if="{{currLevel==5||currLevel==6}}" class="{{currLevel==6?'active':''}}">组/号</text>
+    </view>
+    <view class="info clearfix">
+    
+        <!-- 省 -->
+        <scroll-view scroll-y class="province section {{currLevel==1?'show':'hide'}}">
+          <view data-val="{{item}}" data-nextlevel="2" data-currname="province" data-nextname="city" wx:for="{{provinceList}}" wx:key="{{index}}" bindtap="getNextAddress">{{item}}</view>
+        </scroll-view>
+        <!-- 市 -->
+        <scroll-view  scroll-y class="city section {{currLevel==2?'show':'hide'}}">
+          <view data-val="{{item}}" data-nextlevel="3" data-currname="city" data-nextname="distrinct" wx:for="{{cityList}}" wx:key="{{index}}" bindtap="getNextAddress">{{item}}</view>
+        </scroll-view>
+        <!-- 县 -->
+        <scroll-view scroll-y class="distrinct section {{currLevel==3?'show':'hide'}}" > 
+          <view data-val="{{item}}" data-nextlevel="4" data-currname="distrinct" data-nextname="town" bindtap="getNextAddress" wx:for="{{distrinctList}}" wx:key="{{index}}">{{item}}</view>
+        </scroll-view>
+        <!-- 镇 -->
+        <scroll-view scroll-y class="town section {{currLevel==4?'show':'hide'}}" >
+          <view data-val="{{item}}" data-nextlevel="5" data-currname="town" data-nextname="village" bindtap="getNextAddress" wx:for="{{townList}}" wx:key="{{index}}">{{item}}</view>
+        </scroll-view>
+        <!-- 村 -->
+        <scroll-view scroll-y class="village section {{currLevel==5?'show':'hide'}}">
+          <view wx:for="{{villageList}}" wx:key="{{index}}" data-currname="village" data-val="{{item}}" bindtap="getAddressDetail">{{item}}</view>
+        </scroll-view>
+        <!-- 组 号 -->
+        <view class="addrInfo" wx:if="{{currLevel==6}}">
+          <form bindsubmit="formSubmit">
+            <view class="label {{groupEmpty?'active':''}}">组</view>
+            <input name="group" value="{{group}}" data-empty="groupEmpty" placeholder="请输入组名" placeholder-class="placeholder" bindfocus="focusEvent" bindblur="blurEvent" />
+            <view class="label {{numEmpty?'active':''}}">号</view>
+            <input name="num" value="{{num}}" data-empty="numEmpty" placeholder="请输入号" placeholder-class="placeholder" bindfocus="focusEvent" bindblur="blurEvent" />
+            <button class="buttonIcon" form-type="submit">完成</button>
+          </form>
+        </view>
+
+    </view>
+
+  </view>
+</view>

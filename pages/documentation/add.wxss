@@ -1,0 +1,95 @@
+/* pages/documentation/add.wxss */
+@import '../login/login.wxss';
+
+.form-wrap {
+  margin-bottom: 50rpx;
+  padding-bottom: 60rpx;
+
+}
+
+.form-wrap  .input-wrap {
+  width: 512rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #666;
+  float: left;
+  background: #f9f9f9;
+  border-radius: 40rpx;
+  padding-left: 30rpx;
+  overflow: hidden;
+}
+
+.form-wrap picker, .form-wrap .picker {
+  min-width: 240rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: inline-block;
+}
+
+.form-wrap .year {
+  width: 512rpx;
+}
+
+.form-input {
+  margin-bottom: 20rpx;
+}
+
+.form-input input {
+  padding-left: 0;
+}
+
+.form-wrap  .label {
+  margin-top: 0;
+  margin-bottom: 20rpx;
+}
+
+.form-upload .upload-box, .form-upload>view {
+  display: inline-block;
+  border: 1px dashed transparent;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ccc;
+  margin-bottom: 30rpx;
+}
+
+.form-upload .upload-box {
+  border: 1px dashed #efefef;
+}
+
+.form-upload .upload-box, .form-upload>view{
+  width: 259rpx;
+  height: 158rpx;
+  display: block;
+  float: left;
+  margin: 0 18rpx 15rpx;
+  overflow: hidden;
+}
+
+.form-upload .icon {
+  margin: 18rpx auto;
+  font-size: 54rpx;
+  display: block;
+}
+
+.form-upload .img {
+  width: 100%;
+  height: 100%;
+}
+.form-upload .img-wrap{
+  position: relative;
+}
+.form-upload .img-wrap .icon {
+  font-size: 30rpx;
+  position: absolute;
+  right: 7rpx;
+  top: -5rpx;
+  color: #888;
+  z-index: 99;
+}
+.buttonIcon {
+  margin-top: 80rpx;
+}
+
+.buttonIcon.hide {
+  display: none;
+}

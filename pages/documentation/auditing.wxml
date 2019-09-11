@@ -1,0 +1,52 @@
+<!--pages/documentation/auditing.wxml-->
+<step currStep='3'></step>
+<view class="info-wrap">
+  <view class="tit mainColor">资料审核</view>
+  <view class="item clearfix">
+    <view class="l">户 主</view>
+    <view class="r">{{checkData.headName}}</view>
+  </view>
+  <view class="item clearfix">
+    <view class="l"> 身份证号</view>
+    <view class="r">{{checkData.idCardNo}}</view>
+  </view>
+  <view class="item clearfix">
+    <view class="l">房屋地址</view>
+    <view class="r">{{checkData.province}}{{checkData.city}}{{checkData.distrinct}}{{checkData.town}}{{checkData.village}}{{checkData.addrInfo}}</view>
+  </view>
+  <view class="label">身份图集</view>
+  <view class="imgs clearfix">
+    <view class="img-wrap" data-url="{{URL_BASE}}{{checkData.idCardFront}}" bindtap="preViewImages">
+      <view class="tip">
+        <text>仅用于身份认证</text>
+      </view>
+      <image src="{{URL_BASE}}{{checkData.idCardFront}}"></image>
+    </view>
+    <view class="img-wrap" data-url="{{URL_BASE}}{{checkData.idCardBack}}" bindtap="preViewImages">
+      <view class="tip">
+        <text>仅用于身份认证</text>
+      </view>
+      <image src="{{URL_BASE}}{{checkData.idCardBack}}"></image>
+    </view>
+  </view>
+ <!--  户口本 -->
+  <view class="label">户口本图集</view>
+  <view class="imgs clearfix">
+    <view class="img-wrap" wx:if="{{!noFirst}}" wx:for="{{checkData.residenceImages}}" wx:key="{{index}}" data-url="{{URL_BASE}}{{item.imgPath}}" bindtap="preViewImages">
+      <view class="tip">
+        <text>仅用于身份认证</text>
+      </view>
+      <image src="{{URL_BASE}}{{item.imgPath}}"></image>
+    </view>
+    <view wx:if="{{noFirst}}"  class="img-wrap" wx:for="{{checkData.residenceImages}}" wx:key="{{index}}" data-url="{{URL_BASE}}{{item}}" bindtap="preViewImages">
+      <view class="tip">
+        <text>仅用于身份认证</text>
+      </view>
+      <image src="{{URL_BASE}}{{item}}"></image>
+    </view>
+  </view>
+  <view class="charge clearfix">
+    <navigator class="mainColor toindex" open-type="redirect" hover-class="none" url="/pages/auditList/auditList">返回首页</navigator>
+    <navigator hover-class="none" url="/pages/documentation/add?type=reAdd" class="addHouse mainBg">新增房屋</navigator>
+  </view>
+</view>

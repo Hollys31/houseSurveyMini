@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "完善信息资料",
+    "usingComponents": {
+      "modal": "../../components/modal/modal",
+      "address": "../../components/address/address",
+      "step": "../../components/step/step",
+      "Icon": "../../components/icon/icon"
+    }
+}

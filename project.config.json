@@ -1,0 +1,97 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"coverView": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.7",
+	"appid": "wxd43f04938c061857",
+	"projectname": "surveyMini",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "操作示范",
+					"pathName": "pages/operations/operations",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "户主登录",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "完善信息资料",
+					"pathName": "pages/documentation/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料审核中",
+					"pathName": "pages/documentation/auditing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "资料修改",
+					"pathName": "pages/documentation/edit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "camera",
+					"pathName": "pages/scansion/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "审计列表",
+					"pathName": "pages/auditList/auditList",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

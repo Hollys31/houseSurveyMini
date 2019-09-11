@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "农房确权",
+  "usingComponents": {
+    "Icon": "../../components/icon/icon"
+  }
+}

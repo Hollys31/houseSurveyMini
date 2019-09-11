@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/documentation/add",
+    "pages/documentation/edit",
+    "pages/documentation/auditing",
+    "pages/scansion/index",
+    "pages/operations/operations",
+    "pages/auditList/auditList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

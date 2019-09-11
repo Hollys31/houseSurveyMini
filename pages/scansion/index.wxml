@@ -1,0 +1,55 @@
+<!--pages/scansion/index.wxml-->
+<block wx:if="{{!imgSrc}}">
+  <camera class="{{cameraShow?'':'hide'}}" frame-size="small" device-position="back" flash="off" binderror="error"></camera>
+  <view wx:if="{{!cameraShow}}" class="bg"></view>
+  <view class="tips mainColor">
+    <block wx:if="{{type=='idCardFront'}}">将身份证人像朝上放在此区域，扫描卡片</block>
+    <block wx:if="{{type=='idCardBack'}}">将身份证反面朝上放在此区域，扫描卡片</block>
+    <block wx:if="{{type=='ownerRsid'}}">将户口本户主页放在此区域，扫描卡片</block>
+     <block wx:if="{{type=='resid'}}">将户口本成员页放在此区域，扫描卡片</block>
+    <Icon class="icon" iconClass="icon-camera2" bindtap="takePhotos"></Icon>
+  </view>
+</block>
+<view class="photo-wrap" wx:if="{{imgSrc}}">
+  <image class="photo" src="{{imgSrc}}"></image>
+  <view class="charge clearfix">
+    <view bindtap="newTackPhoto">重新拍照</view>
+    <view bindtap="sureToUpload">确认上传</view>
+  </view>
+</view>
+<view wx:if="{{modalShow}}" class="modal-wrap" catchtouchmove="ture">
+  <view class="sketch">
+    <view class="tit">示意图如下</view>
+    <view class="imgs clearfix">
+      <block wx:if="{{type=='idCardFront'||type=='idCardBack'}}">
+        <view class="img">
+          <image src="/resources/images/idOK.png"></image>标准
+        </view>
+        <view class="img">
+          <image src="/resources/images/idHiatus.png"></image>边框缺失
+        </view>
+        <view class="img">
+          <image src="/resources/images/idFlash.png"></image>闪光强烈
+        </view>
+        <view class="img">
+          <image src="/resources/images/idDim.png"></image>照片模糊
+        </view>
+      </block>
+       <block wx:if="{{type=='resid'||type=='ownerRsid'}}">
+        <view class="img">
+          <image src="/resources/images/residOK.png"></image>标准
+        </view>
+        <view class="img">
+          <image src="/resources/images/residHiatus.png"></image>边框缺失
+        </view>
+        <view class="img">
+          <image src="/resources/images/residFlash.png"></image>闪光强烈
+        </view>
+        <view class="img">
+          <image src="/resources/images/residDim.png"></image>照片模糊
+        </view>
+      </block>
+    </view>
+    <view class="buttonIcon mainBg" bindtap="toTakePhoto">拍照上传</view>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+<!--pages/documentation/add.wxml-->
+<step currStep='2'></step>
+<view class="form-wrap">
+  <image class="identify" src="/resources/images/identify.png"></image>
+  <view class="tit mainColor">填写资料</view>
+  <view class="label">请填写房屋地址</view>
+  <view class="form-input clearfix">
+    <view class="input-wrap">
+      <input class="input {{inputShow?'show':'hide'}}" data-type="addresShow" bindtap="showModal" disabled='disabled' name="addrInfo" value="{{showAddress}}" placeholder="请选择地址" bindblur="blurEvent" />
+    </view>
+    <Icon class="icon" iconClass="icon-img" data-type="residShow" bindtap="showModal"></Icon>
+  </view>
+  <view class="label">请选择房屋竣工时间</view>
+  <view class="form-input clearfix">
+    <view class="input-wrap">
+      <picker class="fl" class="year" mode="date" fields="year" value="{{completeTime}}" start="1990" end="2019" bindchange="bindDateChange">
+        <view> {{completeTime}}</view>
+      </picker>
+    </view>
+  </view>
+  <block wx:if="{{showUploadImg}}">
+    <view class="label">请上传身份证照片</view>
+    <view class="form-upload clearfix">
+      <view class="upload-box" wx:if="{{!idCardFront}}" data-type="idCardFront" bindtap="toUploadPhoto">
+        <Icon class="icon" iconClass="icon-camera1"></Icon> 上传身份证正面
+      </view>
+      <view class="img-wrap" wx:if="{{idCardFront}}">
+        <image class="img" src="{{URL_BASE}}{{idCardFront}}"></image>
+        <Icon class="icon" iconClass="icon-close" data-imgtype="idCardFront" bindtap="deleteImg"></Icon>
+      </view>
+      <view class="upload-box" wx:if="{{!idCardBack}}" data-type="idCardBack" bindtap="toUploadPhoto">
+        <Icon class="icon" iconClass="icon-camera1"></Icon> 上传身份证反面
+      </view>
+      <view class="img-wrap" wx:if="{{idCardBack}}">
+        <Icon class="icon" iconClass="icon-close" data-imgtype="idCardBack" bindtap="deleteImg"></Icon>
+        <image class="img" src="{{URL_BASE}}{{idCardBack}}"></image>
+      </view>
+    </view>
+    <view class="label">请上传户口本照片</view>
+    <view class="form-upload clearfix">
+      <view class="upload-box" wx:if="{{!ownerRsid}}" data-type="ownerRsid" bindtap="toUploadPhoto">
+        <Icon class="icon" iconClass="icon-camera1"></Icon>上传户主户口本照片
+      </view>
+      <view class="img-wrap" wx:if="{{ownerRsid}}">
+        <image class="img" src="{{URL_BASE}}{{ownerRsid}}"></image>
+        <Icon class="icon" iconClass="icon-close" data-imgtype="ownerRsid" bindtap="deleteImg"></Icon>
+      </view>
+      <view class="img-wrap" wx:for="{{resid}}" wx:key="{{index}}" wx:if="{{resid.length>0}}">
+        <image class="img" src="{{URL_BASE}}{{item}}"></image>
+        <Icon class="icon" data-ind="{{index}}" iconClass="icon-close" data-imgtype="resid" bindtap="deleteImg"></Icon>
+      </view>
+      <view class="upload-box" data-type="resid" bindtap="toUploadPhoto">
+        <Icon class="icon" iconClass="icon-camera1"></Icon> 上传户口本照片</view>
+    </view>
+  </block>
+  <view class="buttonIcon  mainBg {{type=='reAdd'?'hide':'show'}}" bindtap="submitToChecking">提交审核</view>
+  <view class="buttonIcon  mainBg {{type=='reAdd'?'show':'hide'}}" bindtap="addHouseToChecking">提交审核</view>
+</view>
+
+<!-- 地址选择 -->
+<address isShow="{{addresShow}}" bind:addressEvent="inputStateEvent"></address>
+<!-- 拍照示意图模态框 -->
+<modal isShow="{{residShow}}" img="{{imgResid}}" bind:modalEvent="inputStateEvent">
+  <view slot="tit">房屋地址</view>
+  <view slot="tip1"> 1.找到户主首页</view>
+  <view slot="tip2">2. 选择户主地址一栏</view>
+  <view slot="tip3">3. 填写户主页所在地址</view>
+</modal>

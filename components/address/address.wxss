@@ -1,0 +1,130 @@
+/* components/address/address.wxss */
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  clear: both;
+  visibility: none;
+}
+
+.modal-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+.modal-inner {
+  width: 576rpx;
+  height: 746rpx;
+  line-height: 2em;
+  padding: 0 30rpx;
+  position: fixed;
+  color: #4a4a4a;
+  background: #fff;
+  top: 50%;
+  left: 50%;
+  margin-left: -288rpx;
+  margin-top: -374rpx;
+  border-radius: 20rpx;
+  z-index: 999;
+}
+
+.modal-inner .tit {
+  font-size: 32rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.address {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.address text {
+  display: inline-block;
+  line-height: 50rpx;
+  padding-right: 10rpx;
+  position: relative;
+}
+
+.address .active::before {
+  content: "";
+  width: 30rpx;
+  height: 4rpx;
+  background: #1484ff;
+  position: absolute;
+  bottom: 0rpx;
+  left: 26%;
+}
+.info{
+  margin-top: 20rpx;
+}
+.info{
+  height: 580rpx;
+  -webkit-overflow-scrolling: touch;
+}
+.info .section {
+  height: 580rpx;
+  font-size: 26rpx;
+}
+
+.info .show {
+  display: block;
+}
+.info .hide {
+  display: none;
+}
+.addrInfo {
+  color: #666;
+  padding:30rpx;
+}
+.addrInfo .label{
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 20rpx;
+}
+.addrInfo .label.active{
+  color: #FD5E6B
+}
+.addrInfo input{
+  font-size: 26rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  border-bottom: 1px solid #eee;
+}
+.placeholder{
+  color: #ccc
+}
+.buttonIcon {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #1484FF;
+  color: #F2FCFA;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 80rpx auto auto;
+  border-radius: 40rpx;
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}

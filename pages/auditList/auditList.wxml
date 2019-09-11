@@ -1,0 +1,47 @@
+<!--pages/auditList /auditList .wxml-->
+<view class="info-wrap">
+<view class="user-info">
+  <view class="headimg fl">
+    <open-data type="userAvatarUrl"></open-data>
+  </view>
+  <view class="text fl">
+    <view>
+      Hi~，
+      <open-data type="userNickName"></open-data>
+      <button wx:if="{{!canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>，</view>
+    感谢您使用农房确权信息录入系统~
+  </view>
+  <Icon bindtap="openModal" class="icon" iconClass="icon-contact"></Icon>
+</view>
+<image class="bg" src="/resources/images/listbg.png"></image>
+</view>
+<view class="audit-list">
+  <view class="item" wx:for="{{houseList}}" wx:key="{{index}}">
+    <view  data-params="{{item}}" data-state="{{item.approveStatus}}" class="tit clearfix" bindtap="tonextPage">
+      <Icon class="icon fl house" iconClass="icon-house"></Icon>{{item.houseNo}}
+      <Icon class="more fr icon" iconClass="icon-more"></Icon>
+    </view>
+    <view class="info">
+      <view class="row">
+        <text space="emsp">户  名：</text>{{item.headName}}</view>
+      <view class="row">
+        <text>身份证号：</text>{{item.idCardNo}}</view>
+      <view class="row">
+        <text>房屋地址：</text>{{item.province}}{{item.city}}{{item.distrinct}}{{item.town}}{{item.village}}{{item.addrInfo}}
+      </view>
+      <image wx:if="{{item.approveStatus=='UD'||item.approveStatus=='DL'}}" class="state-img" src="/resources/images/state1.png"></image>
+      <image wx:if="{{item.approveStatus=='RJ'}}" class="state-img" src="/resources/images/state2.png"></image>
+    </view>
+  </view>
+</view>
+<navigator hover-class="none" url="/pages/documentation/add?type=reAdd" class="addIcon buttonIcon  mainBg">新增房屋信息</navigator>
+<view class="modal-wrap {{modalShow?'show':''}}">
+  <view class="modal-inner">
+    <view class="tit">联系客服</view>
+    <view class="tel">{{phoneNumber}}</view>
+    <view class="charge">
+      <text class="mainColor" bindtap="closeModal">取消</text>
+      <text class="call mainBg" bindtap="makePhoneCall">拨打</text>
+    </view>
+  </view>
+</view>

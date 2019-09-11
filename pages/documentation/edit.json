@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "资料修改",
+  "usingComponents": {
+    "address": "../../components/address/address",
+    "Icon": "../../components/icon/icon"
+  }
+}

@@ -1,0 +1,137 @@
+/* pages/scansion/index.wxss */
+
+page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+camera, .bg {
+  width: 100%;
+  height: 80%;
+}
+
+.tips {
+  width: 100%;
+  height: 20%;
+  padding-top: 2%;
+  background: #fff;
+  overflow: hidden;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 2.4em;
+  box-sizing: border-box;
+}
+
+.tips .icon{
+  display:block;
+  height: 140rpx;
+  line-height: 140rpx;
+  font-size: 140rpx;
+  margin: 20rpx auto;
+}
+
+.scanImg {
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  color: #fefefe;
+}
+
+.photo-wrap {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo {
+  width: 435rpx;
+  height: 335rpx;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -160rpx;
+  margin-left: -215rpx;
+  z-index: 999;
+}
+
+.photo-wrap .charge {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  line-height: 100rpx;
+  z-index: 999;
+  font-size: 30rpx;
+}
+
+.photo-wrap .charge view {
+  text-align: center;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  float: left;
+}
+
+.modal-wrap {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.sketch {
+  width: 576rpx;
+  height: 746rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  text-align: center;
+  padding: 0 30rpx;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-top: -373rpx;
+  margin-left: -288rpx;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.sketch .tit {
+  color: #666;
+  font-size: 32rpx;
+  font-weight: bold;
+  height: 130rpx;
+  line-height: 130rpx;
+}
+
+.sketch .img {
+  width: 185rpx;
+  height: 144rpx;
+  color: #999;
+  font-size: 26rpx;
+  line-height: 2.6em;
+  float: left;
+  margin: 40rpx 36rpx;
+}
+
+.sketch .img image {
+  width: 100%;
+  height: 124rpx;
+}
+
+.buttonIcon {
+  width: 80%;
+  margin-top: 50rpx;
+}

@@ -1,0 +1,15 @@
+<!--components/modal/modal.wxml-->
+<view class="modal-wrap" wx:if="{{isShow}}" catchtouchmove="catchModal">
+  <view class="modal-inner">
+    <view class="tit">
+      <slot name="tit"></slot>
+    </view>
+    <image src="{{img}}"></image>
+    <view class="tips">
+      <slot name="tip1"></slot>
+      <slot name="tip2"></slot>
+      <slot name="tip3"></slot>
+    </view>
+    <view class="buttonIcon" bindtap="closeModal">我知道了</view>
+  </view>
+</view>

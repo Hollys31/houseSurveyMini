@@ -1,0 +1,112 @@
+/* pages/documentation/auditing.wxss */
+
+page {
+  background: #f9f9f9;
+}
+
+.info-wrap {
+  width: 710rpx;
+  margin: 0 auto;
+  padding: 0 17rpx;
+  background: #fff;
+  box-shadow: 0px 11rpx 14rpx 2rpx rgba(189, 189, 189, 0.2);
+  border-radius: 10rpx;
+  color: #333;
+  margin-bottom: 50rpx;
+  padding-bottom: 50rpx;
+}
+
+.info-wrap .tit {
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 2.4em;
+}
+
+.info-wrap .item {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  overflow: hidden
+}
+
+.info-wrap .item>view {
+  float: left;
+}
+
+.info-wrap .item .l {
+  width: 120rpx;
+}
+
+.info-wrap .item .r {
+  width: 550rpx;
+  padding-left: 10rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.info-wrap .label {
+  height: 120rpx;
+  line-height: 120rpx;
+}
+
+.info-wrap .imgs .img-wrap {
+  width: 259rpx;
+  height: 158rpx;
+  margin: 20rpx 40rpx;
+  float: left;
+  overflow: hidden;
+  position: relative;
+}
+
+.info-wrap .img-wrap image {
+  width: 100%;
+  height: 100%;
+}
+
+.info-wrap .img-wrap .tip {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+.info-wrap .tip  text {
+  width: 158rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color: #fd5e6b;
+  border: 3rpx solid #fd5e6b;
+  display: block;
+  margin: 55rpx auto;
+}
+
+.charge {
+  width: 100%;
+  padding: 30rpx 20rpx;
+}
+
+.charge .toindex, .charge .addHouse {
+  width: 280rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  float: left;
+}
+
+.charge .toindex {
+  background: #fff;
+  border: 1px solid #1484ff;
+  margin-right: 70rpx;
+}
+
+.charge .addHouse {
+  color: #fff;
+}

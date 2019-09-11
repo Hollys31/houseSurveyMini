@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "扫描",
+  "usingComponents": {
+    "Icon": "../../components/icon/icon"
+  }
+}

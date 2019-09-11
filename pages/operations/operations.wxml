@@ -1,0 +1,17 @@
+<!--pages/operations/operations.wxml-->
+<view class="video-wrap">
+  <video wx:if="{{isPlay}}" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+    autoplay controls object-fit="fill" show-center-play-btn="{{false}}" ></video>
+  <image wx:if="{{!isPlay}}" bindtap="playVideo" src="/resources/images/cover.png"></image>
+</view>
+<view class="waring">
+  <view class="tit">农房登记发证平台提醒您：</view>
+  <view class="p">请认真填写相关资料，资料准确直接影响到房屋下证是否正常。</view>
+  <view class="p">需要填写户主姓名、户主身份证号码，上传有效的户主身份证（正反）照片，扫描户口本所有成员页面</view>
+  <view class="contact">
+    <view class="tit">如有疑问</view>
+    <text>联系电话</text>
+    xxx xxxxxx
+  </view>
+</view>
+<view class="buttonIcon  mainBg" bindtap="confirmKnown">确认知晓</view>

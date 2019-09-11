@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "资料审核中",
+  "usingComponents": {
+    "step": "../../components/step/step"
+  }
+}

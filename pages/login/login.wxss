@@ -1,0 +1,65 @@
+/* pages/login/login.wxss */
+
+page {
+  background: #f9f9f9;
+}
+
+.form-wrap {
+  width: 710rpx;
+  margin: 0 auto 30rpx;
+  padding: 0 60rpx 50rpx;
+  background: #fff;
+  box-shadow: 0px 11rpx 14rpx 2rpx rgba(189, 189, 189, 0.2);
+  border-radius: 10rpx;
+  position: relative;
+}
+.form-wrap .identify{
+  position: absolute;
+  z-index: 9;
+  right:0;
+  top: 0;
+  width: 198rpx;
+  height: 168rpx;
+}
+.form-wrap .tit {
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 3em;
+}
+
+.form-wrap  .label {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 60rpx;
+}
+
+.form-wrap  .label.active {
+  color: #fd5e6b;
+}
+
+.form-input input {
+  width: 512rpx;
+  height: 80rpx;
+  float: left;
+  background: #f9f9f9;
+  border-radius: 40rpx;
+  padding-left: 30rpx;
+}
+
+.form-input input.hide {
+  display: none;
+}
+
+.form-input  .icon {
+  color: #999;
+  font-size: 50rpx;
+  display: inline-block;
+  margin-top: 10rpx;
+  margin-left: 15rpx;
+}
+
+.buttonIcon {
+  margin-top: 80rpx;
+}

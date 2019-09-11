@@ -1,0 +1,76 @@
+<!--pages/documentation/edit.wxml-->
+<view class="tips">
+  <text>农房登记发证平台提醒您：</text>
+  <view class="text">{{info.approveRemark}}</view>
+</view>
+<view class="form-wrap">
+  <view class="item clearfix">
+    <view class="l">户主</view>
+    <view class="r">
+      <input class="{{inputShow?'show':'hide'}}" disabled="disabled" placeholder="请重新输入户主姓名" value="{{info.headName}}" placeholder-class="placeholder" />
+    </view>
+  </view>
+  <view class="item clearfix">
+    <view class="l">身份证号</view>
+    <view class="r">
+      <input class="{{inputShow?'show':'hide'}}" disabled="disabled" placeholder="请重新输入身份证号" value="{{info.idCardNo}}" placeholder-class="placeholder" />
+    </view>
+  </view>
+  <view class="item clearfix">
+    <view class="l">手机号</view>
+    <view class="r">
+      <input class="{{inputShow?'show':'hide'}}" disabled="disabled" placeholder="请重新输入手机号" value="{{info.headPhone}}" placeholder-class="placeholder" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="l">房屋地址</view>
+    <view class="r">
+      <input class="input {{inputShow?'show':'hide'}}" data-type="addresShow" bindtap="showModal" disabled='disabled' name="addrInfo" value="{{showAddress}}" bindblur="blurEvent" placeholder="请选择地址" placeholder-class="placeholder" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="l">竣工时间</view>
+    <view class="r">
+      <picker class="{{inputShow?'show':'hide'}}" class="fl" class="year" mode="date" fields="year" value="{{completeTime}}" start="1990" end="2019" bindchange="bindDateChange">
+        <view> {{completeTime}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="label">身份证图集</view>
+  <view class="form-upload clearfix">
+    <view class="upload-box" wx:if="{{!idCardFront}}" data-type="idCardFront" bindtap="toUploadPhoto">
+       <Icon class="icon" iconClass="icon-camera1" ></Icon> 上传身份证正面
+    </view>
+    <view class="img-wrap" wx:if="{{idCardFront}}">
+      <image class="img" src="{{URL_BASE}}{{idCardFront}}"></image>
+      <Icon class="icon" iconClass="icon-close" data-imgtype="idCardFront" bindtap="deleteImg"></Icon>
+    </view>
+    <view class="upload-box" wx:if="{{!idCardBack}}"data-type="idCardBack" bindtap="toUploadPhoto">
+       <Icon class="icon" iconClass="icon-camera1"></Icon> 上传身份证反面
+    </view>
+    <view class="img-wrap" wx:if="{{idCardBack}}">
+      <image class="img" src="{{URL_BASE}}{{idCardBack}}"></image>
+      <Icon class="icon" iconClass="icon-close" data-imgtype="idCardBack" bindtap="deleteImg"></Icon>
+    </view>
+  </view>
+  <view class="label">户口本图集</view>
+  <view class="form-upload clearfix">
+  <!-- 之前提交的户口本照片 -->
+    <view class="img-wrap" wx:for="{{residenceImages}}" wx:key="{{index}}" wx:if="{{residenceImages.length>0}}">
+      <image class="img" src="{{URL_BASE}}{{item}}"></image>
+      <Icon class="icon" iconClass="icon-close" data-ind="{{index}}" data-imgtype="residenceImages" data-item="{{item}}" bindtap="deleteImg"></Icon>
+    </view>
+    <!-- 最新增加的户口本照片 -->
+    <view class="img-wrap" wx:for="{{resid}}" wx:key="{{index}}" wx:if="{{resid.length>0}}">
+      <image class="img" src="{{URL_BASE}}{{item}}"></image>
+      <Icon class="icon" iconClass="icon-close" data-ind="{{index}}" data-imgtype="resid" data-item="{{item}}" bindtap="deleteImg"></Icon>
+    </view>
+    
+    <view data-type="resid"  class="upload-box" bindtap="toUploadPhoto">
+        <Icon class="icon" iconClass="icon-camera1"></Icon> 上传户口本照片
+    </view>
+  </view>
+  <view class="buttonIcon  mainBg" bindtap="editHouseToChecking">完成</view>
+</view>
+<address isShow="{{addresShow}}" bind:addressEvent="inputStateEvent"></address>

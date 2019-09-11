@@ -1,0 +1,71 @@
+/**app.wxss**/
+age, view, text, navigator, input, form, select, option, image ,cover-view,cover-image{
+  box-sizing: border-box;
+}
+
+page {
+  font-size: 28rpx;
+  background: #F9F9F9;
+}
+
+image {
+  display: block;
+  width: 100%;
+}
+.mainColor{
+  color: #1484FF;
+}
+.mainBg{
+  background: #1484FF
+}
+.placeholder {
+  color: #ccc;
+  font-size: 26rpx;
+}
+
+.icon {
+  font-size: 28rpx;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  clear: both;
+  visibility: none;
+}
+
+.buttonIcon {
+  width: 600rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #F2FCFA;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 30rpx auto;
+  border-radius: 40rpx;
+}
+
+.modal-wrap{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:rgba(0,0,0,.5);
+}

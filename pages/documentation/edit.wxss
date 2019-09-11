@@ -1,0 +1,104 @@
+/* pages/documentation/edit.wxss */
+@import '../documentation/add.wxss';
+
+page {
+  background: #f9f9f9;
+}
+
+.tips {
+  height: 155rpx;
+  line-height: 1.5em;
+  padding: 10rpx 40rpx;
+  color: #666;
+}
+
+.tips text {
+  line-height: 1.8em;
+  font-size: 30rpx;
+  color: #fd5e6b;
+}
+
+.tips .text {
+  padding: 0 2em;
+}
+
+.form-wrap {
+  padding: 60rpx 15rpx 80rpx;
+}
+
+.form-wrap .label {
+  margin: 0;
+  height: 130rpx;
+  line-height: 130rpx;
+}
+
+.form-wrap .item {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.form-wrap .item>view {
+  float: left;
+}
+
+.form-wrap .item .l {
+  width: 120rpx;
+}
+
+.form-wrap .item .r {
+  width: 550rpx;
+  padding-left: 10rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.form-wrap .item input {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 15rpx;
+}
+
+.form-wrap .item input.hide {
+  display: none;
+}
+
+.placeholder {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.form-upload {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-upload>view, .form-upload>navigator {
+  margin: 0 40rpx;
+  width: 259rpx;
+  height: 158rpx;
+  overflow: hidden;
+}
+
+.form-upload .img-wrap {
+  width: 259rpx;
+  height: 158rpx;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.form-upload .img-wrap .icon {
+  font-size: 30rpx;
+  position: absolute;
+  right: 5rpx;
+  top: -5rpx;
+  color: #888;
+  z-index: 99;
+}
+.form-upload .upload-box{
+  margin: 0 40rpx 30rpx;
+
+}

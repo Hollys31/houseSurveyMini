@@ -1,0 +1,54 @@
+/* pages/operations/operations.wxss */
+page {
+  background: #fff;
+}
+
+.video-wrap {
+  width: 750rpx;
+  height: 437rpx;
+  position: relative;
+  padding-bottom: 37rpx;
+}
+
+.video-wrap video {
+  width: 750rpx;
+  height: 416rpx;
+}
+
+.video-wrap image {
+  width: 100%;
+  height: 437rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.waring{
+  padding: 50rpx 40rpx;
+  position: relative;
+  border-radius:60rpx 60rpx 0 0;
+  margin-top:-50rpx;
+  background: #fff;
+  z-index: 999;
+  line-height: 1.8em;
+}
+.waring .tit{
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.waring .p{
+  text-indent: 2em;
+  margin: 30rpx 0px;
+}
+.waring .contact{
+  padding-left: 2em;
+  margin: 70rpx 0 20rpx;
+  line-height: 1.5em;
+}
+.waring .contact .tit{
+  font-size: 30rpx;
+}
+.waring .contact text{
+  display: block;
+  margin-bottom: 15rpx;
+}

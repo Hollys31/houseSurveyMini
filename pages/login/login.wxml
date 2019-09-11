@@ -1,0 +1,41 @@
+<!--pages/login/login.wxml-->
+<step></step>
+<view class="form-wrap">
+  <view class="tit mainColor">登录户主</view>
+  <form bindsubmit="formSubmit">
+    <image class="identify" src="/resources/images/identify.png"></image>
+    <view class="label {{ headNameEmpty?'active':''}}">请填写户主名称</view>
+    <view class="form-input clearfix">
+      <view class="input-wrap">
+        <input maxlength="4" class="{{inputShow?'show':'hide'}}" value="" name="headName" data-empty="headNameEmpty" bindfocus="focusEvent" bindblur="blurEvent" />
+      </view>
+      <Icon class="icon" iconClass="icon-img"  data-type="residShow" bindtap="showModal"></Icon>
+    </view>
+    <view class="label {{idCardNoEmpty?'active':''}}">请填写身份证号</view>
+    <view class="form-input clearfix">
+      <view class="input-wrap">
+        <input maxlength="18" class="{{inputShow?'show':'hide'}}" value="" type="idcard" name="idCardNo" data-empty="idCardNoEmpty" bindfocus="focusEvent" bindblur="blurEvent" />
+      </view>
+      <Icon class="icon" iconClass="icon-img" data-type="idShow" bindtap="showModal"></Icon>
+    </view>
+    <view class="label {{headPhoneEmpty?'active':''}}">请填写户主手机号</view>
+    <view class="form-input clearfix">
+      <view class="input-wrap">
+        <input value="" maxlength="11" class="{{inputShow?'show':'hide'}}" type="number" name="headPhone" data-empty="headPhoneEmpty" bindfocus="focusEvent" bindblur="blurEvent" />
+      </view>
+    </view>
+    <button class="buttonIcon  mainBg" form-type="submit">下一步</button>
+  </form>
+</view>
+<modal isShow="{{idShow}}" img="{{imgID}}"  bind:modalEvent="inputStateEvent">
+  <view slot="tit">身份证信息</view>
+  <view slot="tip1">1.找到身份证正面</view>
+  <view slot="tip2">2.找到公民身份证号码一栏</view>
+  <view slot="tip3">3.填写身份证号码</view>
+</modal>
+<modal isShow="{{residShow}}" img="{{imgResid}}" bind:modalEvent="inputStateEvent">
+  <view slot="tit">户主信息</view>
+  <view slot="tip1"> 1. 找到户主页</view>
+  <view slot="tip2">2. 选择户主姓名一栏</view>
+  <view slot="tip3">3. 填写户主姓名</view>
+</modal>
